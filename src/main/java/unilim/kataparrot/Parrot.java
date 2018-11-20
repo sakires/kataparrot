@@ -19,7 +19,8 @@ public class Parrot {
 	public double getSpeed() {
 		switch (type) {
 		case EUROPEAN:
-			return getBaseSpeed();
+			throw new RuntimeException("Should be unreachable");
+			//return getBaseSpeed();
 		case AFRICAN:
 			return Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
 		case NORWEGIAN_BLUE:
@@ -36,7 +37,7 @@ public class Parrot {
 		return 9.0;
 	}
 
-	private double getBaseSpeed() {
+	protected double getBaseSpeed() {
 		return 12.0;
 	}
 
